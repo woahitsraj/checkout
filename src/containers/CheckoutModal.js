@@ -10,7 +10,7 @@ import Button from '../components/Button'
 import Discount from '../components/Discount'
 import Total from '../components/Total'
 
-import ProductsContainer from './ProductsContainer'
+import ItemsContainer from './ItemsContainer'
 
 class CheckoutModal extends Component {
   static propTypes = {
@@ -40,7 +40,7 @@ class CheckoutModal extends Component {
           <h1>Your Shopping Cart</h1>
         </ModalHeader>
         <ModalSection>
-          <ProductsContainer />
+          <ItemsContainer />
           <Discount
             discount={discount}
             discountAmmount={discountAmmount} />

@@ -1,4 +1,4 @@
-import { CHANGE_QUANTITY, DELETE_PRODUCT } from '../actions/action_cart'
+import { CHANGE_QUANTITY, DELETE_ITEM } from '../actions/action_cart'
 
 const product = {
   name: 'Oversize Blazer',
@@ -30,7 +30,7 @@ export default function (state = defaultState, action) {
           }
         } else return item
       })
-    case DELETE_PRODUCT:
+    case DELETE_ITEM:
       return [
         ...state.slice(0, action.index),
         ...state.slice(action.index + 1)

@@ -1,5 +1,5 @@
 export const CHANGE_QUANTITY = 'CHANGE_QUANTITY'
-export const DELETE_PRODUCT = 'DELETE_PRODUCT'
+export const DELETE_ITEM = 'DELETE_ITEM'
 
 export function changeQuantity (index, quantity) {
   return {
@@ -9,9 +9,9 @@ export function changeQuantity (index, quantity) {
   }
 }
 
-export function deleteProduct (index) {
+export function deleteItem (index) {
   return {
-    type: DELETE_PRODUCT,
+    type: DELETE_ITEM,
     index
   }
 }

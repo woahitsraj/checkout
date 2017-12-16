@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import './ProductsHeader.css'
+import './ItemsHeader.css'
 
-const ProductsHeader = () => {
+const ItemsHeader = () => {
   return (
-    <header className="products-header">
+    <header className="items-header">
       <div className="product-wrapper">
         <label htmlFor="product">Product</label>
       </div>
@@ -19,8 +19,8 @@ const ProductsHeader = () => {
   )
 }
 
-ProductsHeader.propTypes = {
+ItemsHeader.propTypes = {
   children: PropTypes.node
 }
 
-export default ProductsHeader
+export default ItemsHeader
