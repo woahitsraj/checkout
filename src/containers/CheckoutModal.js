@@ -51,7 +51,7 @@ class CheckoutModal extends Component {
             discountAmmount={discountAmmount} />
         </ModalSection>
         <ModalFooter>
-          <Button onClick={toggle}>Continue Shopping</Button>
+          <Button color="secondary" onClick={toggle}>Continue Shopping</Button>
           <Button onClick={toggle}>Checkout</Button>
         </ModalFooter>
       </Modal>

@@ -1,0 +1,17 @@
+@import '../variables.css';
+
+button.button {
+  padding: 12px 15px 12px 15px;
+  font-size: 12px;
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  background-color: $red;
+  color: white;
+  &:hover {
+    cursor: pointer;
+  }
+  &.color-secondary {
+    color: black;
+    background-color: $grey;
+  }
+}

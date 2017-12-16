@@ -1,16 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Button = ({ children, ...rest }) => {
+import './Button.css'
+
+const Button = ({ children, className, color, ...rest }) => {
   return (
-    <button {...rest}>
+    <button className={`button ${className} ${color ? `color-${color}` : ''}`} {...rest}>
       {children}
     </button>
   )
 }
 
 Button.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
+  className: PropTypes.string,
+  color: PropTypes.string
 }
 
 export default Button
