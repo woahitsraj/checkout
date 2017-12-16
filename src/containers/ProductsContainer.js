@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import { changeQuantity, deleteProduct } from '../actions/action_cart'
-import '../components/Product'
-import '../components/ProductsHeader'
+import Product from '../components/Product'
+import ProductsHeader from '../components/ProductsHeader'
 
 class ProductsContainer extends Component {
   static propTypes = {

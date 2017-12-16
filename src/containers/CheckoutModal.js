@@ -1,21 +1,39 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
 import Modal from '../components/Modal'
 import ModalHeader from '../components/ModalHeader'
 import ModalSection from '../components/ModalSection'
 import ModalFooter from '../components/ModalFooter'
 import Button from '../components/Button'
+import Discount from '../components/Discount'
+import Total from '../components/Total'
 
 import ProductsContainer from './ProductsContainer'
 
-export default class CheckoutModal extends Component {
+class CheckoutModal extends Component {
   static propTypes = {
     isOpen: PropTypes.bool,
-    toggle: PropTypes.func.isRequired
+    toggle: PropTypes.func.isRequired,
+    cart: PropTypes.array
   }
+
+  state = {
+    discount: {
+      percentage: 10,
+      description: 'As a first time shopper you get a discount on your first order'
+    }
+  }
+
   render () {
-    const { isOpen, toggle } = this.props
+    const { isOpen, toggle, cart } = this.props
+    const { discount } = this.state
+    const subTotal = cart.reduce((sum, item) => {
+      return sum + (item.product.price * item.quantity)
+    }, 0)
+    const discountAmmount = subTotal * (discount.percentage / 100)
+    const total = subTotal - discountAmmount
     return (
       <Modal isOpen={isOpen} toggle={toggle}>
         <ModalHeader>
@@ -23,10 +41,14 @@ export default class CheckoutModal extends Component {
         </ModalHeader>
         <ModalSection>
           <ProductsContainer />
-          <Discount />
+          <Discount
+            discount={discount}
+            discountAmmount={discountAmmount} />
         </ModalSection>
         <ModalSection>
-          <Total />
+          <Total
+            total={total}
+            discountAmmount={discountAmmount} />
         </ModalSection>
         <ModalFooter>
           <Button onClick={toggle}>Continue Shopping</Button>
@@ -36,3 +58,11 @@ export default class CheckoutModal extends Component {
     )
   }
 }
+
+function mapStateToProps (state) {
+  return {
+    cart: state.cart
+  }
+}
+
+export default connect(mapStateToProps)(CheckoutModal)
