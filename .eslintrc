@@ -8,9 +8,11 @@
     "babel",
     "react",
     "promise",
+    "jest"
   ],
   "env": {
-    "browser" : true
+    "browser" : true,
+    "jest/globals": true
   },
   "rules": {
     "key-spacing"          : 0,

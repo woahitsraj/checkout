@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import './ProductsHeader.css'
+
 const ProductsHeader = () => {
   return (
     <header className="products-header">
