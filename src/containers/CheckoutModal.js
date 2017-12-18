@@ -12,7 +12,7 @@ import Total from '../components/Total'
 
 import ItemsContainer from './ItemsContainer'
 
-class CheckoutModal extends Component {
+export class CheckoutModal extends Component {
   static propTypes = {
     isOpen: PropTypes.bool,
     toggle: PropTypes.func.isRequired,

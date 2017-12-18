@@ -1,8 +1,24 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { shallow } from 'enzyme'
 import App from './App'
 
-it('renders without crashing', () => {
-  const div = document.createElement('div')
-  ReactDOM.render(<App />, div)
+describe('App', () => {
+  let wrapper
+  beforeEach(() => {
+    wrapper = shallow(<App />)
+  })
+
+  it('Renders the app without crashing', () => {
+    expect(wrapper.find('.App').length).toEqual(1)
+  })
+
+  it('Renders a button', () => {
+    expect(wrapper.find('Button').length).toEqual(1)
+  })
+
+  it('Opens the modal when the button is clicked', () => {
+    expect(wrapper.state('isModalOpen')).toBe(false)
+    expect(wrapper.find('Button').simulate('click'))
+    expect(wrapper.state('isModalOpen')).toBe(true)
+  })
 })
