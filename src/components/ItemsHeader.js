@@ -8,13 +8,19 @@ const ItemsHeader = () => {
     <header className="items-header">
       <div className="product-image-wrapper" />
       <div className="product-wrapper">
-        <label htmlFor="product">Product</label>
+        <label id="product-label" htmlFor="product">
+          Product
+        </label>
       </div>
       <div className="quantity-wrapper">
-        <label htmlFor="product">Quantity</label>
+        <label id="quantity-label" htmlFor="quantity">
+          Quantity
+        </label>
       </div>
       <div className="price-wrapper">
-        <label htmlFor="product">Price</label>
+        <label id="price-label" htmlFor="price">
+          Price
+        </label>
       </div>
     </header>
   )

@@ -10,7 +10,7 @@ export default class Item extends Component {
     onDeleteItem: PropTypes.func.isRequired
   }
 
-  onDeleteKeyPress = (event) => {
+  onDeleteKeyPress = event => {
     if (event.key === ' ' || event.key === 'Enter') {
       event.preventDefault()
       this.props.onDeleteItem()
@@ -25,14 +25,20 @@ export default class Item extends Component {
         <div className="product-image-wrapper">
           <img src={product.image} alt={product.name} />
         </div>
-        <div className="product-wrapper">
-          <p className="product-brand">{product.brand}</p>
-          <h2 className="product-name">{product.name}</h2>
+        <div aria-labelledby="product-label" className="product-wrapper">
+          <p aria-label="brand name" className="product-brand">
+            {product.brand}
+          </p>
+          <h2 aria-label="product name" className="product-name">
+            {product.name}
+          </h2>
           <div className="product-info">
             <div className="info-tag">
               <div
+                aria-label="product color"
                 className="color-square"
-                style={{ backgroundColor : product.color }} />
+                style={{ backgroundColor: product.color }}
+              />
               {product.color}
             </div>
             <div className="info-tag">size {product.size}</div>
@@ -43,27 +49,44 @@ export default class Item extends Component {
               onKeyPress={this.onDeleteKeyPress}
               role="button"
               onClick={onDeleteItem}
-              className="product-action">Delete</a>
-            <a
-              tabIndex="0"
-              role="button"
-              className="product-action">Change</a>
+              className="product-action">
+              Delete
+            </a>
+            <a tabIndex="0" role="button" className="product-action">
+              Change
+            </a>
           </div>
         </div>
         <div className="quantity-wrapper">
           <div className="quantity-input-wrapper">
-            <button onClick={() => { onQuantityChange(parseInt(item.quantity) - 1) }}>-</button>
+            <button
+              aria-label="decrease quantity"
+              onClick={() => {
+                onQuantityChange(parseInt(item.quantity) - 1)
+              }}>
+              -
+            </button>
             <input
-              onChange={(event) => {
-                onQuantityChange(event.target.value)
+              aria-labelledby="quantity-label"
+              onChange={event => {
+                onQuantityChange(parseInt(event.target.value))
               }}
               type="text"
-              value={item.quantity} />
-            <button onClick={() => { onQuantityChange(parseInt(item.quantity) + 1) }}>+</button>
+              value={item.quantity}
+            />
+            <button
+              aria-label="increase quantity"
+              onClick={() => {
+                onQuantityChange(parseInt(item.quantity) + 1)
+              }}>
+              +
+            </button>
           </div>
         </div>
         <div className="price-wrapper">
-          <p className="product-price">{product.price * item.quantity} SEK</p>
+          <p aria-labelledby="price-label" className="product-price">
+            {product.price * item.quantity} SEK
+          </p>
         </div>
       </Card>
     )

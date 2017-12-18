@@ -22,14 +22,15 @@ class ItemsContainer extends Component {
         <Item
           key={index}
           item={item}
-          onQuantityChange={(quantity) => {
+          onQuantityChange={quantity => {
             if (quantity > 0) {
               changeQuantity(index, quantity)
             }
           }}
           onDeleteItem={() => {
             deleteItem(index)
-          }} />
+          }}
+        />
       )
     })
   }
@@ -50,4 +51,6 @@ function mapStateToProps (state) {
   }
 }
 
-export default connect(mapStateToProps, { changeQuantity, deleteItem })(ItemsContainer)
+export default connect(mapStateToProps, { changeQuantity, deleteItem })(
+  ItemsContainer
+)
