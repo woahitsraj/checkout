@@ -1,4 +1,19 @@
+@import '../variables.css';
+
 .discount-wrapper {
-  .discount {
+  margin-top: 25px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  .discount-text-wrapper {
+    margin-left: 100px;
+    .discount {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      color: $red;
+      margin-right: 25px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
   }
 }

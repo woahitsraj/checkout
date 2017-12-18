@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import { changeQuantity, deleteItem } from '../actions/action_cart'
+
+import Items from '../components/Items'
 import Item from '../components/Item'
 import ItemsHeader from '../components/ItemsHeader'
 
@@ -21,7 +23,9 @@ class ItemsContainer extends Component {
           key={index}
           item={item}
           onQuantityChange={(quantity) => {
-            changeQuantity(index, quantity)
+            if (quantity > 0) {
+              changeQuantity(index, quantity)
+            }
           }}
           onDeleteItem={() => {
             deleteItem(index)
@@ -32,10 +36,10 @@ class ItemsContainer extends Component {
 
   render () {
     return (
-      <div>
+      <Items>
         <ItemsHeader />
         {this.renderItems()}
-      </div>
+      </Items>
     )
   }
 }

@@ -6,6 +6,7 @@ import './ItemsHeader.css'
 const ItemsHeader = () => {
   return (
     <header className="items-header">
+      <div className="product-image-wrapper" />
       <div className="product-wrapper">
         <label htmlFor="product">Product</label>
       </div>

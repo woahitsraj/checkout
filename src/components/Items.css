@@ -1,0 +1,17 @@
+.items {
+  .product-image-wrapper {
+    width: 220px;
+  }
+  .product-wrapper {
+    width: 250px;
+  }
+  .quantity-wrapper {
+    width: 130px;
+    text-align: center;
+  }
+  .price-wrapper {
+    width: 130px;
+    text-align: right;
+    margin-right: 25px;
+  }
+}

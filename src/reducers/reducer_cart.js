@@ -1,11 +1,12 @@
 import { CHANGE_QUANTITY, DELETE_ITEM } from '../actions/action_cart'
-
+import blazer from '../images/blazer.png'
 const product = {
   name: 'Oversize Blazer',
   brand: 'Brand',
   color: 'black',
   size: '36',
-  price: 1750
+  price: 1750,
+  image: blazer
 }
 
 const defaultState = [

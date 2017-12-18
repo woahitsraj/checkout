@@ -12,6 +12,19 @@ h1 {
   font-size: 24px;
 }
 
+h2 {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+a {
+  color: black;
+  text-decoration: underline;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 label {
   color: rgb(102, 102, 102);
   font-size: 14px;

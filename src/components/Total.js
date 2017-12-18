@@ -6,8 +6,14 @@ import './Total.css'
 const Total = ({ total, discountAmmount }) => {
   return (
     <div className="total">
-      <p>{discountAmmount}</p>
-      <p>{total}</p>
+      <div className="discount-amount-wrapper">
+        <p>Discount:</p>
+        <p className="discount-ammount">-{discountAmmount} SEK</p>
+      </div>
+      <div className="total-ammount-wrapper">
+        <p>Total: </p>
+        <p className="total-ammount">{total} SEK</p>
+      </div>
     </div>
   )
 }
