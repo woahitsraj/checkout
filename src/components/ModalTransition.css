@@ -1,17 +1,31 @@
 .modal-transition-enter {
   opacity: 0.01;
+  .modal-view {
+    transform: translateY(-100px);
+  }
 }
 
 .modal-transition-enter.modal-transition-enter-active {
   opacity: 1;
   transition: opacity 300ms ease-in;
+  .modal-view {
+    transform: translateY(0px);
+    transition: transform 300ms ease-out;
+  }
 }
 
 .modal-transition-exit {
   opacity: 1;
+  .modal-view {
+    transform: translateY(0px);
+  }
 }
 
 .modal-transition-exit.modal-transition-exit-active {
   opacity: 0.01;
   transition: opacity 300ms ease-in;
+  .modal-view {
+    transform: translateY(-100px);
+    transition: transform 300ms ease-out;
+  }
 }
