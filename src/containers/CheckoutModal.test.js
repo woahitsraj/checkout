@@ -41,6 +41,13 @@ describe('CheckoutModal', () => {
     )
   })
 
+  it('Should render a Modal with a Header, Footer, and Two Section', () => {
+    expect(wrapper.find('Modal').length).toBe(1)
+    expect(wrapper.find('ModalHeader').length).toBe(1)
+    expect(wrapper.find('ModalFooter').length).toBe(1)
+    expect(wrapper.find('ModalSection').length).toBe(2)
+  })
+
   it('Will toggle the modal when one of the buttons is clicked', () => {
     wrapper.find('Button').first().simulate('click')
     expect(toggle.mock.calls.length).toBe(1)
