@@ -1,6 +1,7 @@
 .items {
   .product-image-wrapper {
-    width: 220px;
+    width: 160px;
+    margin-left: 25px;
   }
   .product-wrapper {
     width: 250px;
