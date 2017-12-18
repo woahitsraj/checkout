@@ -1,0 +1,5 @@
+Things to do
+* Add more tests of components, redux actions, and reducers
+* Add some icons to buttons and graphics to the modal
+* Add some animations to button hover states
+* Refactor parts of Item.js into several reusable UI components
